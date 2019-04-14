@@ -256,17 +256,21 @@ app.get('/update', function(req, res) {
 
 var num;
 app.get('/average', function(req, res) {
-  connection.query(`SELECT * FROM Carshare.Area WHERE area_id = '` + req.query.area_id + `';`, function(err, rows, fields){
+  connection.query(`SELECT * FROM Carshare.Area WHERE area_id = 1;`, function(err, rows, fields){
     num = rows[0].totalcar_number;
     console.log(num + " cars are available");
     if (num < 5) console.log("One-way is currently unavailable");
     else if (num <= 10) {
       console.log("50 dollars additional fee is required");
-      connection.query(`UPDATE Carshare.ride_info SET price = 150 WHERE ride_id = '` + req.query.ride_id +`';`);
+      let result_html = '<center><h1>' + "50 dollars additional fee is required" + '</h1></center>';
+      res.send(result_html);
+      connection.query(`UPDATE Carshare.ride_info SET price = 150 WHERE ride_id = 1;`);
     }
     else if (num > 20) {
       console.log("20 dollars promotion is available");
-      connection.query(`UPDATE Carshare.ride_info SET price = 80 WHERE ride_id = '` + req.query.ride_id +`';`);
+      let result_html = '<center><h1>' + "20 dollars promotion is available" + '</h1></center>';
+      res.send(result_html);
+      connection.query(`UPDATE Carshare.ride_info SET price = 80 WHERE ride_id = 1;`);
     }
   });
 });
