@@ -133,7 +133,7 @@ app.get('/check',function(req,res) {
 
                 result_html += '<body><h1 style="font-size: 50px; text-align: center;" class="one">' + message + '</h1></body>';
     			result_html += '<form action="/filteredCarList">';
-    			result_html += '<center><button style="width: 200px; height: 50px; color: grey; margin-top:600px; margin-left:-50px;" type="button">';
+    			result_html += '<center><button style="width: 200px; height: 50px; color: grey; margin-top:600px; margin-left:-50px;" type="button"; onclick=window.location.href="/average">';
                 result_html += 'OK </button>';
     			result_html += '<button style="width: 200px; height: 50px; color: grey; margin-top:600px; margin-left:250px;" type="button"';
                 result_html += 'onclick=window.location.href="/homepage"> No Thanks </button></center>';
