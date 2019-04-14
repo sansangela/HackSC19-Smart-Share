@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Log In</title>
+
+   <style>
+   body {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin:0;
+    border:0;
+    padding:0;
+}
+ 
+#login_frame {
+    width: 400px;
+    height: 260px;
+    padding: 13px;
+ 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+
+    background-color: grey;
+ 
+    border-radius: 10px;
+    text-align: center;
+}
+ 
+form p > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+#image_logo {
+    margin-top: 22px;
+}
+ 
+.label_input {
+    font-size: 14px;
+ 
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+ 
+    color: white;
+    background-color: #20B2AA;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+ 
+.text_field {
+    width: 278px;
+    height: 28px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+}
+ 
+#btn_login {
+    font-size: 14px;
+    font-family: 宋体;
+ 
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+ 
+    color: white;
+    background-color: #20B2AA;
+    border-radius: 6px;
+    border: 0;
+ 
+    float: left;
+}
+ 
+#forget_pwd {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    float: right;
+    top: 5px;
+ 
+}
+ 
+#forget_pwd:hover {
+    color: blue;
+    text-decoration: underline;
+}
+ 
+#login_control {
+    padding: 0 28px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ 
+li {
+    float: left;
+}
+ 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ 
+li a:hover {
+    background-color: #111;
+}
+</style>
+
+   	<script>
+        function login() {
+         
+            var email = document.getElementById("e-mail");
+            var pass = document.getElementById("password");
+         
+            if (email.value == "") {
+         
+                alert("Please enter your e-mail address");
+         
+            } else if (pass.value  == "") {
+         
+                alert("Please enter your passward");
+         
+            } else if(email.value == "admin" && pass.value == "123456"){
+         
+                window.location.href="/myTrip";
+         
+            } else {
+         
+                alert("Please enter the correct e-mail and passward!")
+            }
+        }
+
+        </script>
+	</head>
+
+	<body>
+
+		<ul>
+		  <li style="height = 222px;font-size: 30px; color: white; font-style: italic;">Smart Share</li>
+      <li><a href="/homepage">Homepage</a></li>
+		</ul>
+
+		<div id="login_frame">
+ 
+    		<h1 style="color: white;">Welcome Back!</h1>
+ 
+    		<form method="post">
+ 
+        	<p><label class="label_input">e-mail</label><input type="text" id="e-mail" class="text_field"/></p>
+       		<p><label class="label_input">passward</label><input type="text" id="password" class="text_field"/></p>
+ 
+       		<div id="login_control">
+            	<input type="button" id="btn_login" value="Log In" onclick="login();"/>
+            	<a id="forget_pwd" href="forget_pwd.html">Forget Passward？</a>
+       		</div>
+   			</form>
+		</div>
+	</body>
+</html>

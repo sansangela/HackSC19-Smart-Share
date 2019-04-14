@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Homepage</title>
+
+		<style type="text/css">
+		div{
+			margin:0;
+			border:0;
+			padding:0;
+		}
+
+		/*body{
+		  margin: 0;  removing the default body margin 
+		}*/
+
+		h1{
+			width: 863px;
+		}
+
+		#left{
+			position: relative; 
+			left: 75px; 
+			width: 500px; 
+			height: 50px;
+			float:left; 
+			display:inline
+			margin: 10px;
+		}
+
+
+		#right{
+			position: relative; 
+			left: 200px; 
+			width: 250px;
+			height: 50px; 
+			float:left; 
+			display:inline
+			margin: 10px;
+		}
+
+		#top{
+			margin: 50px;
+			margin-top: 50px;
+		}
+
+		#bottom{
+			margin: 50px;
+			margin-top: 200px;
+		}
+
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		    height: 50px;
+		}
+		 
+		li {
+		    float: left;
+		}
+		 
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+		 
+		li a:hover {
+		    background-color: #111;
+		}
+
+/*.active {
+    background-color: #4CAF50;
+}*/
+		</style>
+
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+		<!-- Menu -->
+		<ul>
+			<li style="font-size: 30px; color: white; font-style: italic;">Smart Share</li>
+			<li><a href="/homepage">Homepage</a></li>
+			<li style="float:right" onclick=window.location.href='/logIn'><a url='public/login/logIn.html'>Log In</a></li>
+			<li style="float:right"><a href="#sign up">Sign Up</a></li>
+		</ul>
+
+		<!-- calendar -->
+		<div class="container">
+			<div class="row">
+				<h2>Select your date</h2>
+			</div>
+
+			<div class="row">
+				<div class='col-sm-6'>
+					<form>
+		          		<div class="form-group">
+		                	<div class='input-group date' id='datepicker'>
+		                    	<input type='text' id="datepicker"" class="form-control"/>			         
+		                    	<span class="input-group-addon">
+			                       	<span class="glyphicon glyphicon-calendar"></span>
+			                   	</span>
+			               	</div>
+		            	</div>
+		        	</form>
+	        	</div>
+	    	</div>
+
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+		<script >
+		    $(function () {
+	        	$('#datepicker').datepicker({
+		            format: "dd/mm/yyyy",
+		            autoclose: true,
+		            todayHighlight: true,
+			        showOtherMonths: true,
+			        selectOtherMonths: true,
+			        autoclose: true,
+			        changeMonth: true,
+			        changeYear: true,
+			        orientation: "button",
+		        });
+	    	});
+		</script>
+
+		<div id="top">
+			<h1>Round Trip</h1>
+
+			<form action="/go">
+			<div id="left">
+
+				<h3>Departure & Destination</h3>
+
+				
+
+				<input type="text" style="color: rgb(153, 153, 153); display: inline;" value="Departure" name="Departure1"
+				onfocus="if(value=='Departure') {value='';}this.style.color='#000';" 
+				onblur="if (value=='') {value='Departure';this.style.color='#999';}"/>
+
+				<img style="display:inline;" src="http://pic.90sjimg.com/design/00/21/84/57/58fd7fc3529e8.png" height="42" width="42">
+
+		<!-- 		<h3>Destination</h3> -->
+				<input type="text" style="color: rgb(153, 153, 153); display:inline;" value="Destination" name="Destination1"
+				onfocus="if(value=='Destination') {value='';}this.style.color='#000';" 
+				onblur="if (value=='') {value='Destination';this.style.color='#999';}"/>
+
+			</div>
+
+			<div id="right">
+				<h3>Number of People</h3>
+					<select id="select1" name="select1">
+						<option value ="0">less than or equal to 5</option>
+					  	<option value ="1">more than 5</option>
+					</select>
+
+				<input type="submit" value="Go"/>
+			</div>
+		</form>
+		
+		</div>
+
+		<div id="bottom">
+			<br/>
+
+			<h1>One-Way Trip</h1>
+
+		<form action="/check">
+		<div id="left">
+			<h3>Departure & Destination</h3>
+
+			<input type="text" style="color: rgb(153, 153, 153); display: inline;" value="Departure" name="Departure2" 
+			onfocus="if(value=='Departure') {value='';}this.style.color='#000';" 
+			onblur="if (value=='') {value='Departure';this.style.color='#999';}"/>
+
+			<img style="display:inline;" src=https://upload.cc/i1/2019/04/14/bz47VI.png height="42" width="42">
+
+	<!-- 		<h3>Destination</h3> -->
+			<input type="text" style="color: rgb(153, 153, 153); display:inline;" value="Destination" name="Destination2"
+			onfocus="if(value=='Destination') {value='';}this.style.color='#000';" 
+			onblur="if (value=='') {value='Destination';this.style.color='#999';}"/>
+		</div>
+
+		<div id="right">
+			<h3>Number of People</h3>
+				<select id="select2" name="select2">
+					<option value ="0">less than or equal to 5</option>
+				  	<option value ="1">more than 5</option>
+
+				</select>
+<!-- 
+			<button onclick=window.location.href='/check'>Check</button> -->
+			<input type="submit" value="Check"/>
+		</div>
+	</form>
+
+		</div>
+
+	</body>
+</html>
