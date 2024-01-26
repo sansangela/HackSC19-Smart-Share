@@ -1,4 +1,4 @@
-# LA Hacks 2019: Leaf
+# HackSC 2019: Smart Share
 More on Devpost: https://devpost.com/software/smart-share
 
 ## Inspiration
